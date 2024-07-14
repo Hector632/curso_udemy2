@@ -1,14 +1,50 @@
+:root{  /* : son suedoelementos o seudoselectores*/
+    --blanco: #ffffff;  /*propiedades custom*/
+    --negro: #212121;
+    --primario: #FF8811;
+    --secundario: #0E3B43;
+    --gris: #757575;
+    --fuente-principal:3.8rem;
+}
+
 html{
     font-size: 62.5%;
 }
 body{
     font-size: 16px; /*hace mejor las porporciones en la pantalla 1rem = 10px*/
+    font-family: "Krub", sans-serif;
 }
 .title{
     text-align: center;
-    font-size: 3.8rem;
+    font-size: var(--fuente-principal); 
 }
 
 .title span{
     font-size: 2rem;
+}
+
+.contenedor{
+    width: 120rem;
+    margin: 0 auto;
+}
+
+.nav-bg{
+    background-color: var(--secundario);
+}
+.navegacion-principal{
+    display: flex;
+    justify-content: space-between;
+}
+.navegacion-principal a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--negro);
+    border-radius: 1rem;
 }
