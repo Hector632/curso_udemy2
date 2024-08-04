@@ -7,33 +7,72 @@
     --fuente-principal:3.8rem;
 }
 
+/*  Globales  */
 html{
     font-size: 62.5%;
+    box-sizing: border-box; /*la linea 12 a la 17 soluciona los problemas de box-sizing*/
+}
+*,*:before,*:after{
+    box-sizing: inherit;
 }
 body{
-    font-size: 16px; /*hace mejor las porporciones en la pantalla 1rem = 10px*/
+    font-size: 16px; /*hace mejor las proporciones en la pantalla 1rem = 10px*/
     font-family: "Krub", sans-serif;
 }
-.title{
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: .5rem;
+    width: 90%;
     text-align: center;
-    font-size: var(--fuente-principal); 
+}
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
 }
 
+/*  Fuentes  */
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 2.8rem;
+}
+h3{
+    font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
 .title span{
     font-size: 2rem;
 }
 
-.contenedor{
-    width: 120rem;
-    margin: 0 auto;
-}
-
+/*  Navegacion principal  */
 .nav-bg{
     background-color: var(--secundario);
 }
 .navegacion-principal{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+}
+/*para crear un atajo para crear media queries ctrl+shift+p user snippets css*/
+@media (min-width: 480px) {
+    .navegacion-principal {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 .navegacion-principal a{
     color: var(--blanco);
@@ -42,9 +81,33 @@ body{
     font-weight: 700;
     padding: 1rem;
 }
-
 .navegacion-principal a:hover{
     background-color: var(--primario);
     color: var(--negro);
-    border-radius: 1rem;
+    border-radius: 0.5rem;  /* redondeo de esquinas*/
+}
+
+/*  Hero  */
+.hero{
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 450px; 
+    position: relative;
+}
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb( 0 0 0 / 50%);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contenido-hero h2,
+.contenido-hero p {
+    color: var(--blanco);
 }
