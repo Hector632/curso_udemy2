@@ -4,6 +4,7 @@
     --primario: #FF8811;
     --secundario: #0E3B43;
     --gris: #757575;
+    --grisClaro: #DFE9F3;
     --fuente-principal:3.8rem;
 }
 
@@ -18,10 +19,19 @@ html{
 body{
     font-size: 16px; /*hace mejor las proporciones en la pantalla 1rem = 10px*/
     font-family: "Krub", sans-serif;
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
 }
 .contenedor{
     max-width: 120rem;
     margin: 0 auto;
+}
+.sombra{
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
 }
 .boton{
     background-color: var(--secundario);
@@ -35,11 +45,16 @@ body{
     border-radius: .5rem;
     width: 90%;
     text-align: center;
+    border: none;
 }
 @media (min-width: 768px) {
     .boton{
         width: auto;
     }
+}
+
+.boton:hover{
+    cursor: pointer;
 }
 
 /*  Fuentes  */
@@ -57,6 +72,24 @@ h1,h2,h3{
 }
 .title span{
     font-size: 2rem;
+}
+
+/*  Utilidades  */
+.w-sm-100{
+    width: 100%;
+}
+@media (min-width:768px){
+    .w-sm-100{
+        width: auto;
+    }
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
 }
 
 /*  Navegacion principal  */
@@ -94,6 +127,7 @@ h1,h2,h3{
     background-size: cover;
     height: 450px; 
     position: relative;
+    margin-bottom: 2rem;
 }
 .contenido-hero{
     position: absolute;
@@ -111,3 +145,92 @@ h1,h2,h3{
 .contenido-hero p {
     color: var(--blanco);
 }
+
+.contenido-hero .ubicacion{ 
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Servicios */
+.servicios{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem; /* control de separacion con grid */
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.servicios h3{
+color: var(--secundario);
+font-weight: normal;
+
+}
+
+.servicio p{
+    line-height: 2;
+    text-align: center;
+}
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Contacto */
+.fomulario{
+    background-color: var(--gris);
+    width: min(60rem, 100%); /* Toma el valor más pequeño */
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.fomulario fieldset{
+    border: none;
+}
+
+.fomulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--primario);
+}
+
+.contenedor-campos{
+
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: flex;
+}
+
+.input-text{
+    width: 100%;
+    border: none;    
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+
+}
+
+.enviar .boton{
+    width: 100%;
+}
+
+
